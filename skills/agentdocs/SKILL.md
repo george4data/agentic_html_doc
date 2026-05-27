@@ -1,5 +1,5 @@
 ---
-name: source-complete-docs
+name: agentdocs
 description: >-
   Author and validate HTML-first, agent-readable documentation following The
   Source-Complete Standard. Use when creating or updating repository docs
@@ -12,7 +12,7 @@ description: >-
 license: MIT
 ---
 
-# Source-Complete Docs
+# agentdocs
 
 Author and validate documentation in **The Source-Complete Standard**: one static,
 HTML-first file that serves AI agents first and humans second, with no view-time

@@ -1,4 +1,4 @@
-# Source-Complete Docs (Gemini context)
+# agentdocs (Gemini context)
 
 This extension provides a skill for **authoring and validating HTML-first, agent-readable
 documentation** following *The Source-Complete Standard*.
@@ -7,7 +7,7 @@ When the user asks to write, generate, update, or validate documentation meant f
 to read — or mentions source-complete HTML docs, faceted `data-*` tags,
 `data-source`/`data-verified` provenance, CSS-only tabs, or a docs front-door index —
 **follow the full operating manual in
-[`source-complete-docs/skills/source-complete-docs/SKILL.md`](source-complete-docs/skills/source-complete-docs/SKILL.md)**.
+[`skills/agentdocs/SKILL.md`](skills/agentdocs/SKILL.md)**.
 Open its bundled `reference/` and `templates/` files as needed.
 
 ## The five rules that define conformance (summary)
