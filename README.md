@@ -101,7 +101,11 @@ agentic_html_doc/
             └── templates/standard.html  ← conforming exemplar
 ```
 
-## License / status
+## License
+
+[MIT](LICENSE) — free to use, modify, and redistribute.
+
+## Status
 
 Draft v0.1. The base facet vocabulary, a reference author-time (Pandoc) build, and a
 docs-specific conformance benchmark are open items — see `STANDARD.md §10`.

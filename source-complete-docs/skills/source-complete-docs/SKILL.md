@@ -9,7 +9,7 @@ description: >-
   like "write agent-readable docs", "document this for agents", "source-complete
   HTML docs", "validate these docs against the standard", "faceted data-* tags",
   "data-source/data-verified provenance", "CSS-only tabs", "front-door index".
-license: Draft v0.1
+license: MIT
 ---
 
 # Source-Complete Docs

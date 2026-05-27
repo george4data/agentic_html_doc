@@ -15,6 +15,7 @@
       "description": "Author and validate HTML-first, agent-readable documentation following The Source-Complete Standard: one static HTML file, no view-time JS, faceted data-* tags, data-source/data-verified provenance, CSS-only tabs, and a front-door index.",
       "version": "0.1.0",
       "author": { "name": "george4data" },
+      "license": "MIT",
       "keywords": ["documentation", "agent", "html", "ai", "docs-as-code", "source-complete"]
     }
   ]
