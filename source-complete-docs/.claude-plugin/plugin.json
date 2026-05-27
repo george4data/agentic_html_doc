@@ -1,0 +1,8 @@
+{
+  "name": "source-complete-docs",
+  "version": "0.1.0",
+  "description": "Author and validate HTML-first, agent-readable documentation following The Source-Complete Standard (source-complete, no view-time JS, faceted data-* tags, data-source/data-verified provenance, CSS-only tabs, front-door index).",
+  "author": { "name": "george4data", "url": "https://github.com/george4data" },
+  "homepage": "https://github.com/george4data/agentic_html_doc",
+  "keywords": ["documentation", "agent", "html", "ai", "docs-as-code", "source-complete"]
+}

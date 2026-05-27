@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en"
+      data-doc-type="subsystem-contract"
+      data-verified="2026-05-26"
+      data-source="STANDARD.md">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>standard.html — a conforming exemplar of The Source-Complete Standard</title>
+
+  <!--
+    CONFORMANCE NOTES (read me, agent or human):
+    - This file contains ZERO script elements. Nothing executes at view time. (Rule 3.1)
+    - Every piece of content is inline in this source. CSS only styles; it withholds
+      nothing. Delete the <style> block and you lose appearance, not content. (Rule 3.2)
+    - The tabs below are native <details name="view"> — CSS-only, no JS. (Rule 4.4)
+    - Collapsed tabs are hidden from a browser's accessibility tree, but an agent reading
+      THIS RAW SOURCE sees all of them. That is the consumption contract. (Rule 2)
+  -->
+
+  <style>
+    :root { --ink:#1a1a1a; --muted:#5a5a5a; --line:#ddd; --accent:#0b5; --bg:#fff; }
+    body { font:16px/1.6 system-ui, sans-serif; color:var(--ink); background:var(--bg);
+           max-width:52rem; margin:2rem auto; padding:0 1rem; }
+    h1,h2,h3 { line-height:1.25; }
+    code { background:#f4f4f4; padding:.1em .35em; border-radius:3px; font-size:.9em; }
+    nav { border:1px solid var(--line); border-radius:8px; padding:1rem 1.25rem; background:#fafafa; }
+    nav ul { margin:.5rem 0 0; padding-left:1.1rem; }
+    table { border-collapse:collapse; width:100%; margin:1rem 0; }
+    th,td { border:1px solid var(--line); padding:.4rem .6rem; text-align:left; }
+    th { background:#f4f4f4; }
+    .provenance { font-size:.8em; color:var(--muted); }
+
+    /* CSS-only tabs. <details name="view"> already makes them mutually exclusive. */
+    .tabs { display:flex; flex-wrap:wrap; gap:.25rem; margin:1rem 0; border-bottom:2px solid var(--line); }
+    .tabs > details { flex:0 0 auto; }
+    .tabs > details > summary {
+      list-style:none; cursor:pointer; padding:.4rem .9rem; border:1px solid var(--line);
+      border-bottom:none; border-radius:6px 6px 0 0; background:#f4f4f4; color:var(--muted);
+    }
+    .tabs > details[open] > summary { background:var(--bg); color:var(--ink); font-weight:600; }
+    .tabs > details > summary::-webkit-details-marker { display:none; }
+    /* Panel sits below the tab row, full width (Baseline 2025: ::details-content). */
+    .tabs > details::details-content {
+      position:absolute; left:1rem; right:1rem; max-width:52rem;
+      border:1px solid var(--line); border-top:none; padding:1rem; background:var(--bg);
+    }
+    .skeleton { border:1px dashed var(--muted); padding:1rem; border-radius:6px; }
+    .skeleton label { display:block; margin:.5rem 0; }
+    .skeleton .anno { color:var(--accent); font-size:.8em; }
+  </style>
+</head>
+
+<body>
+
+<!-- ============ FRONT-DOOR-STYLE INDEX (the Locate construct) ============ -->
+<nav aria-label="Documentation index" data-job="locate">
+  <h1>standard.html</h1>
+  <p><strong>Consumption contract:</strong> agents read the raw <code>.html</code> source of this
+     file and every file it links to — not a browser-rendered snapshot. (Rule 2.1)</p>
+  <ul>
+    <li><a href="STANDARD.md"
+           data-job="comprehend" data-cost="3k"
+           title="The full human-readable standard">The Source-Complete Standard (full text)</a></li>
+    <li><a href="#auth" data-service="auth" data-job="comprehend" data-cost="1k"
+           title="Worked subsystem contract for token issuance">Auth subsystem — this page</a></li>
+  </ul>
+</nav>
+
+<main>
+
+  <!-- ============ A WORKED SUBSYSTEM CONTRACT (Comprehend) ============ -->
+  <article id="auth"
+           class="backend security"
+           data-service="auth" data-epic="login"
+           data-api-version="2" data-diataxis="reference"
+           data-source="src/auth/token.ts#L40-L78" data-verified="2026-05-26">
+
+    <h2>Auth subsystem — token issuance</h2>
+    <p class="provenance">
+      Shadows <code>src/auth/token.ts#L40-L78</code> · last verified 2026-05-26.
+      An agent may follow <code>data-source</code> to ground truth when stakes are high.
+    </p>
+
+    <p>This <code>&lt;article&gt;</code> carries five facets at once — it is one
+       un-duplicated region that surfaces under a <em>Backend</em> view, a
+       <em>Security</em> view, a <em>login</em> epic, and a <em>v2 API</em> filter,
+       with no copy and no cross-link. That is the keystone of the standard.</p>
+
+    <!-- ===== Multi-view: CSS-only tabs over fully-present content (Rule 4.4) ===== -->
+    <h3>The same content, three views (no JavaScript)</h3>
+    <div class="tabs">
+      <details name="view" open>
+        <summary>Overview</summary>
+        <section data-job="comprehend">
+          <h4>Overview</h4>
+          <p>Tokens are signed with RS256 and expire after 15 minutes. The client sends
+             the token as a <code>Bearer</code> credential on every authenticated request.</p>
+        </section>
+      </details>
+
+      <details name="view">
+        <summary>API</summary>
+        <!-- ===== Specialized construct: schema table (Comprehend → Act) ===== -->
+        <section data-job="comprehend" data-api-version="2">
+          <h4>POST /auth/login</h4>
+          <table>
+            <caption>Request fields</caption>
+            <tr><th>Field</th><th>Type</th><th>Notes</th></tr>
+            <tr data-field="email" data-type="string"><td>email</td><td>string</td><td>RFC 5322</td></tr>
+            <tr data-field="password" data-type="string"><td>password</td><td>string</td><td>min 12 chars</td></tr>
+            <tr data-field="ttl" data-type="int"><td>ttl</td><td>int</td><td>seconds, default 900</td></tr>
+          </table>
+        </section>
+      </details>
+
+      <details name="view">
+        <summary>Diagram</summary>
+        <!-- ===== Diagram: inline SVG, meaning in <title>/<desc>, not geometry (Rule 7.1) ===== -->
+        <section data-job="comprehend">
+          <h4>Token flow</h4>
+          <svg viewBox="0 0 360 70" role="img" aria-labelledby="flow-t flow-d"
+               data-source="docs/diagrams/auth-flow.mmd" width="100%" height="70">
+            <title id="flow-t">Auth token flow</title>
+            <desc id="flow-d">Client posts credentials to /auth/login; the server validates
+              them and returns a 15-minute RS256 JWT; the client then sends that JWT as a
+              Bearer token on subsequent requests.</desc>
+            <rect x="2" y="20" width="90" height="30" fill="none" stroke="#1a1a1a"/>
+            <text x="47" y="40" text-anchor="middle" font-size="11">Client</text>
+            <line x1="92" y1="35" x2="135" y2="35" stroke="#1a1a1a"/>
+            <rect x="135" y="20" width="90" height="30" fill="none" stroke="#1a1a1a"/>
+            <text x="180" y="40" text-anchor="middle" font-size="11">/auth/login</text>
+            <line x1="225" y1="35" x2="268" y2="35" stroke="#1a1a1a"/>
+            <rect x="268" y="20" width="90" height="30" fill="none" stroke="#1a1a1a"/>
+            <text x="313" y="40" text-anchor="middle" font-size="11">RS256 JWT</text>
+          </svg>
+        </section>
+      </details>
+    </div>
+
+    <!-- ===== Canonical example: pinned to a CI-tested file (CAP-6), provenance not execution ===== -->
+    <h3>Canonical example</h3>
+    <pre data-source="examples/login.test.ts#L8-L14" data-verified="2026-05-26"><code>const res = await fetch("/auth/login", {
+  method: "POST",
+  body: JSON.stringify({ email, password }),
+});
+const { token } = await res.json(); // 15-min RS256 JWT</code></pre>
+    <p class="provenance">This example is shown statically and pinned to a tested file;
+       its trust comes from the pin, not from running anything here.</p>
+  </article>
+
+  <!-- ============ A UI / WIREFRAME SPEC (Act) — annotated skeletal form ============ -->
+  <article id="login-ui"
+           class="frontend"
+           data-screen="login" data-epic="login" data-diataxis="reference">
+    <h2>Login screen — build contract</h2>
+    <p>Below is the <em>annotated skeletal form</em>: real semantic HTML, deliberately
+       unstyled, annotated with intent. A human reads a rough visual; an agent reads an
+       exact build contract. Same artifact.</p>
+
+    <form class="skeleton" data-screen="login">
+      <label>Email
+        <input data-field="email" type="email" data-validation="required, rfc5322">
+        <span class="anno">→ required, RFC 5322</span>
+      </label>
+      <label>Password
+        <input data-field="password" type="password" data-validation="required, min12">
+        <span class="anno">→ required, min 12 chars</span>
+      </label>
+      <button type="submit"
+              data-action="POST /auth/login"
+              data-shows-when="email valid and password valid">Sign in</button>
+      <span class="anno">→ calls POST /auth/login; enabled only when both fields valid</span>
+    </form>
+  </article>
+
+</main>
+
+<footer>
+  <p class="provenance">
+    Conforms to The Source-Complete Standard v0.1. Zero <code>&lt;script&gt;</code> tags.
+    Open items (base facet vocabulary, reference Pandoc writer, docs-specific benchmark)
+    are tracked in <a href="STANDARD.md">STANDARD.md §10</a>.
+  </p>
+</footer>
+
+</body>
+</html>

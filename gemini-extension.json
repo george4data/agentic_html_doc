@@ -1,0 +1,6 @@
+{
+  "name": "agentic-html-doc",
+  "version": "0.1.0",
+  "description": "Author and validate HTML-first, agent-readable documentation (The Source-Complete Standard).",
+  "contextFileName": "GEMINI.md"
+}
